@@ -1,0 +1,22 @@
+{
+  "name": "Prostate template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/classnames": "^2.2.6",
+    "@types/react": "^16.4.14",
+    "@types/react-bootstrap": "^0.32.14",
+    "@types/react-dom": "^16.0.7",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
+    "style-loader": "^0.23.1"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.0.3"
+  }
+}
