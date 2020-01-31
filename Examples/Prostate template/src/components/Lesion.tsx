@@ -220,7 +220,7 @@ export class Lesion extends React.Component<LesionProps, LesionState> {
                             <p>{this.state.dwiText}</p>
                         </SectraRow>
                         <SectraRow labelFor={dceId} labelText="DCE" indentLevel={indentLevel}>
-                            <SectraButtonGroup id={dceId} name={dceId} buttonValues={["Abcent", "Early enhancement", "No enhancement"]} onStateChange={this.updateDce} defaultButton="abcent" templateFieldOnly={true}></SectraButtonGroup>
+                            <SectraButtonGroup id={dceId} name={dceId} buttonValues={["Absent", "Early enhancement", "No enhancement"]} onStateChange={this.updateDce} defaultButton="abcent" templateFieldOnly={true}></SectraButtonGroup>
                         </SectraRow>
                         <SectraRow labelFor={this.piradsId} labelText="PIRADS" indentLevel={indentLevel}>
                             <SectraInput inputType="text" bsSize="xl" value={this.state.piradsVal} name={this.piradsId} id={this.piradsId} hidden></SectraInput>
