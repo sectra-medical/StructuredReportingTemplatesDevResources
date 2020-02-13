@@ -1,7 +1,10 @@
 {
-  "name": "DEMO",
+  "name": "demo",
   "version": "1.0.0",
   "description": "",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
   "main": "./dist/bundle.js",
   "dependencies": {
     "@types/classnames": "^2.2.6",

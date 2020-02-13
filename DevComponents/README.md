@@ -6,9 +6,7 @@ The components used in this template will be published to npm in the future.
 # Getting started
 1. Clone or download the repo.
 2. Copy this folder (DevComponents) to a place where you want to develop the new template
-3. Open this folder in a command prompt and execute <em>npm install</em>
-4. Execute <em>webpack</em> ("compiles" the typescript into javascript)
-5. Head to the <em>dist</em> folder and open index.html in a webbrowser. (This file can now be imported to Sectra IDS7)
+3. Build the template (See build instructions in the StructuredReportingTemplatesDevResources root folder.)
 
 # Using the components
 The package consists of the following components.
