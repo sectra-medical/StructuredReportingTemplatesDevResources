@@ -2,10 +2,10 @@
   "name": "provider-example",
   "version": "1.0.0",
   "description": "Simple template using a simple provider",
-  "main": "index.js",
-  "scripts:": {
-	"build": "webpack --config webpack.config.js"
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
   },
+  "main": "index.js",
   "dependencies": {
     "@types/classnames": "^2.2.6",
     "@types/react": "^16.9.11",
