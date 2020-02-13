@@ -10,9 +10,7 @@ Start the provider:
 3. execute <em>node DataProvider.js</em>
 
 Build the template:
-1. Open a command prompt this folder.
-2. Execute <em>npm install</em>
-3. Execute <em>webpack</em>
+See the build instructions in the readme in StructuredReportingTemplatesDevResources root folder.
 
 Import the template to Sectra IDS7:
 1. Open the Structured Report Template Administration
