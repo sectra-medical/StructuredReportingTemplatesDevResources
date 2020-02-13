@@ -1,16 +1,19 @@
 {
-  "name": "Prostate template",
+  "name": "prostate-template",
   "version": "1.0.0",
   "description": "",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
   "main": "index.js",
   "dependencies": {
     "@types/classnames": "^2.2.6",
-    "@types/react": "^16.4.14",
+    "@types/react": "^16.9.19",
     "@types/react-bootstrap": "^0.32.14",
-    "@types/react-dom": "^16.0.7",
-    "react": "^16.5.2",
+    "@types/react-dom": "^16.9.5",
+    "react": "^16.12.0",
     "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.12.0",
     "style-loader": "^0.23.1"
   },
   "devDependencies": {
