@@ -13,4 +13,5 @@ Go to the official website for node.js and download and install the latest stabl
 1. Open a command prompt in the template root folder
 2. Execute npm install
 3. Execute npm run build
+
 The build is then created in the dist folder. The HTML file in that folder can now be imported into Sectra IDS7.
