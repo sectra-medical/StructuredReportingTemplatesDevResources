@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+  <meta name='dcterms.title' content='Breast'>
+  <meta name='dcterms.description' content='breast demo'>
+  <meta name='dcterms.identifier' content='b1'>
+  <meta name='dcterms.type' content='IMAGE_REPORT_TEMPLATE'>
+  <meta name='dcterms.language' content='en'>
+  <meta name='dcterms.publisher' content='Sectra' />
+  <meta name='sectra.images' />
+  <script src='breast-image.js'></script>
+  <script src='jquery.min.js'></script>
+  <script src='breast.js'></script>
+  <script src='canvas.js'></script>
+  <script src='bootstrap.min.js'></script>
+  <link href='styles.css' rel='stylesheet' />
+  <link href='bootstrap.min.css' rel='stylesheet' />
+</head>
+
+<body spellcheck='false'>
+  <div class='col-sm-12'>
+    <form id="breast-form" class="form-horizontal">
+      <fieldset>
+
+        <!-- Indication -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Indication</label>
+          <div class="col-xs-9">
+            <div class="btn-group btn-group-xs btn-group-justified" data-toggle="buttons"
+              name="Indication">
+              <label class="btn btn-secondary active">Screening
+                <input data-field-type="radio button" name="Indication" type="radio" id="1" checked autocomplete="off"
+                  value="Screening"></label>
+              <label class="btn btn-secondary">Diagnostic
+                <input data-field-type="radio button" name="Indication" type="radio" id="1" autocomplete="off" value="Diagnostic"></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technique -->
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Technique</label>
+          <div class="col-xs-9">
+            <div class="btn-group btn-group-xs btn-group-justified" data-toggle="buttons" id="technique">
+              <label class="btn btn-secondary active">Bilateral
+                <input name="Technique" type="radio" id="2" autocomplete="off" checked value="Bilateral" data-field-type="radio button"></label>
+              <label class="btn btn-secondary">Left
+                <input name="Technique" type="radio" id="2" autocomplete="off" value="Left" data-field-type="radio button"></label>
+              <label class="btn btn-secondary">Right
+                <input name="Technique" type="radio" id="2" autocomplete="off" value="Right" data-field-type="radio button"></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison -->
+        <div class="form-group">
+          <input type="text" id="comparison-text" data-field-type="text" name="Compared with" hidden>
+          <label class="col-xs-3 control-label">Comparison</label>
+          <div class="col-xs-9">
+            <div class="btn-group btn-group-xs btn-group-justified" id="comparison" data-toggle="buttons">
+              <label class="btn btn-secondary">2017
+                <input type="checkbox" autocomplete="off" value="2017"></label>
+              <label class="btn btn-secondary">2016
+                <input type="checkbox" autocomplete="off" value="2016"></label>
+              <label class="btn btn-secondary">2015
+                <input type="checkbox" autocomplete="off" value="2015"></label>
+              <label class="btn btn-secondary">2014
+                <input type="checkbox" autocomplete="off" value="2014"></label>
+              <label class="btn btn-secondary">2013
+                <input type="checkbox" autocomplete="off" value="2013"></label>
+              <label class="btn btn-secondary">2012
+                <input type="checkbox" autocomplete="off" value="2012"></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breast composition -->
+        <div class="form-group">
+            <input type="text" id="composition-text" data-field-type="text" name="Breast composition" hidden
+              value="a. The breasts are almost entirely fatty.">
+          <!-- often mandatory -->
+          <label class="col-xs-3 control-label">Breast composition</label>
+          <div class="col-xs-9">
+            <div class="btn-group btn-group-xs btn-group-justified" id="breast-composition" data-toggle="buttons">
+              <label class="btn btn-secondary active">a
+                <input type="radio" id="composition-a" checked autocomplete="off" value="a"></label>
+              <label class="btn btn-secondary">b
+                <input type="radio" id="composition-b" autocomplete="off" value="b"></label>
+              <label class="btn btn-secondary">c
+                <input type="radio" id="composition-c" autocomplete="off" value="c"></label>
+              <label class="btn btn-secondary">d
+                <input type="radio" id="composition-d" autocomplete="off" value="d"></label>
+            </div>
+          </div>
+          <p class="col-xs-9 pull-right sub-text" id="composition-explanation" style="font-style: italic">The breasts
+            are almost entirely fatty.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Assessment</label>
+          <div class="col-xs-9">
+            <select class="form-control input-sm" id="assessment" name="Assessment" data-field-type="selection_list">
+              <option selected value></option>
+              <option id="opt0">0 - Incomplete</option>
+              <option id="opt1">1 - Negative</option>
+              <option id="opt2">2 - Benign</option>
+              <option id="opt3">3 - Probably Benign</option>
+              <option id="opt4">4 - Suspicious</option>
+              <option id="opt5">5 - Highly Suggestive of Malignancy</option>
+              <option id="opt6">6 - Known Biopsy-Proven Malignancy</option>
+            </select>
+          </div>
+          <p class="col-xs-9 pull-right sub-text" id="findings-management" style="font-style: italic"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Findings</label>
+          <div class="col-xs-9">
+            <select class="form-control input-sm" name="Findings" data-field-type="selection_list" id="findings">
+              <option>No findings</option>
+              <option>Mass</option>
+              <option>Calcifications</option>
+              <option>Architectural Distortion</option>
+              <option>Asymmetries</option>
+              <option>Intramammary lymph node</option>
+              <option>Skin lesion</option>
+              <option>Solitary dilated duct</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Displayed if an assessment is set -->
+        <div id="findings-bonus" style="display:none">
+
+          <div class="form-group" style="padding-right: 15px">
+            <!-- width="938px" height="468px" -->
+            <canvas class="pull-right" id="breast-canvas" style="cursor: pointer;" width="550" height="250"></canvas>
+            <input id="img-to-PACS" type="hidden" name="Breast sketch">
+            <img hidden id="breast-img" src="(will be set in breast.js)" />
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-xs-4 control-label">Laterality</label>
+            <div class="col-xs-8">
+              <p id="laterality"></p>
+            </div>
+            <input id="laterality-output" type="text" data-field-type="text"
+            name="Laterality" hidden>
+          </div>
+          
+          <div class="form-group">
+            <label class="col-xs-4 control-label">Quadrant</label>
+            <div class="col-xs-8">
+              <p id="quadrant"></p>
+            </div>
+            <input id="quadrant-output" type="text" data-field-type="text"
+            name="Quadrant" hidden>
+          </div>
+
+          <div class="form-group">
+            <label class="col-xs-4 control-label">Depth</label>
+            <div class="col-xs-8">
+              <p id="depth"></p>
+            </div>
+            <input id="depth-output" type="text" data-field-type="text"
+            name="Depth" hidden>
+          </div>
+        </div>
+
+        <!-- Impression -->
+        <div id="impression-group" class="form-group">
+          <label class="col-xs-3 control-label">Impression</label>
+          <!-- summary of technique, findings and management -->
+          <span class="col-xs-9" id="impression"></span>
+          <input type="text" id="impression-output" name="Impression" data-field-type="text" value="" hidden>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+</body>
+
+</html>
