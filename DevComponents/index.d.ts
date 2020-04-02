@@ -1,0 +1,107 @@
+import * as React from 'react';
+import { SectraToggleButtonProps } from './src/SectraRadioButton';
+
+
+export interface SectraButtonGroupProps extends React.HTMLProps<HTMLInputElement> {
+    name: string;
+    buttonValues: string[];
+    checkedButton?: string;
+    onStateChange?: (buttonText: string) => void;
+    justify?: boolean;
+    disable?: number[];
+}
+
+export declare class SectraButtonGroup extends React.Component<SectraButtonGroupProps, any> {
+}
+
+declare module 'sectra-button-group' {
+}
+
+
+export interface SectraInputProps extends React.HTMLProps<HTMLInputElement> {
+    name: string;
+    type: string;
+    bsSize?: string;
+    onInputChange?: (val: string) => void;
+    onInputBlur?: (val: string) => void;
+}
+
+export declare class SectraInput extends React.Component<SectraInputProps, any> {
+}
+
+declare module 'sectra-input' {
+}
+
+
+export interface SectraTextAreaProps extends React.HTMLProps<HTMLTextAreaElement> {
+	name: string;
+	onInputChange?: (val: string) => void;
+	onInputBlur?: (val: string) => void;
+}
+
+export declare class SectraTextArea extends React.Component<SectraTextAreaProps, any> {
+}
+
+declare module 'sectra-text-area' {
+}
+
+
+export interface SectraRowProps extends React.HTMLProps<HTMLLabelElement> {
+    children?: React.ReactNode;
+    labelText?: string;
+    labelFor?: string;
+    marginTop?: number;
+    abbrTitle?: string;
+}
+
+export declare class SectraRow extends React.Component<SectraRowProps, any> {
+}
+
+declare module 'sectra-row'{
+}
+
+
+export interface SectraSelectProps extends React.HTMLProps<HTMLSelectElement> {
+    name: string;
+    optionValues: string[];
+    bsSize?: string;
+    keys?: string[];
+	defaultOptionText?: string;
+    onStateChange?: (x: string) => void;
+}
+
+export declare class SectraSelect extends React.Component<SectraSelectProps, any> {
+}
+
+declare module 'sectra-select' {
+}
+
+
+export interface SectraCheckButtonProps extends React.HTMLProps<HTMLInputElement> {
+    name: string;
+    value: string;
+    checked?: boolean;
+    onStateChange?: (x: boolean) => void;
+    partOfGroup?: boolean;
+}
+
+export declare class SectraCheckButton extends React.Component<SectraCheckButtonProps, any> {
+}
+
+declare module 'sectra-check-button' {
+}
+
+export interface SectraCheckButtonGroupProps extends React.HTMLProps<HTMLDivElement> {
+}
+
+export declare class SectraCheckButtonGroup extends React.Component<SectraCheckButtonGroupProps, any> {
+}
+
+declare module 'sectra-check-button-group' {
+}
+
+declare module 'sectra-radio-button' {
+}
+export declare class SectraRadioButton extends React.Component<SectraToggleButtonProps, any> {
+}
+

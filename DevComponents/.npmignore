@@ -1,0 +1,5 @@
+src
+*.config.js
+*.html
+tsconfig.json
+*.py

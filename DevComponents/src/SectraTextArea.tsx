@@ -1,11 +1,6 @@
 import * as React from "react";
+import {SectraTextAreaProps} from "../index";
 
-
-interface SectraTextAreaProps extends React.HTMLProps<HTMLTextAreaElement> {
-	name: string;
-	onInputChange?: (val: string) => void;
-	onInputBlur?: (val: string) => void;
-}
 
 export class SectraTextArea extends React.Component<SectraTextAreaProps, {}> {
     constructor(props: any, context: any) {

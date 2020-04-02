@@ -1,14 +1,7 @@
 import * as React from "react";
 import {HTMLProps} from "react";
+import {SectraInputProps} from "../index";
 
-
-interface SectraInputProps extends React.HTMLProps<HTMLInputElement> {
-    name: string;
-    type: string;
-    bsSize?: string;
-    onInputChange?: (val: string) => void;
-    onInputBlur?: (val: string) => void;
-}
 
 export class SectraInput extends React.Component<SectraInputProps, {}> {
     constructor(props: any, context: any) {

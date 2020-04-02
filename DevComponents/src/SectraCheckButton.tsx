@@ -1,13 +1,5 @@
 import * as React from "react";
-
-
-interface SectraCheckButtonProps extends React.HTMLProps<HTMLInputElement> {
-    name: string;
-    value: string;
-    checked?: boolean;
-    onStateChange?: (x: boolean) => void;
-    partOfGroup?: boolean;
-}
+import {SectraCheckButtonProps} from "../index";
 
 
 interface SectraCheckButtonState {

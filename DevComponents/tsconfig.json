@@ -4,11 +4,16 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
+		"declaration": false,
         "target": "es5",
 		"lib": ["es5", "es6", "dom"],
+		"typeRoots": [
+			"index.d.ts",
+			"node_modules/@types"
+		],
         "jsx": "react"
     },
     "include": [
-        "./src/**/*"
+        "./src/*"
     ]
 }

@@ -1,14 +1,6 @@
 import * as React from "react";
+import {SectraSelectProps} from "../index";
 
-
-interface SectraSelectProps extends React.HTMLProps<HTMLSelectElement> {
-    name: string;
-    optionValues: string[];
-    bsSize?: string;
-    keys?: string[];
-	defaultOptionText?: string;
-    onStateChange?: (x: string) => void;
-}
 
 interface SectraSelectState {
     value: string;

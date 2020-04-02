@@ -1,9 +1,10 @@
 import * as React from "react";
 
-interface SectraToggleButtonProps extends React.HTMLProps<HTMLInputElement> {
+export interface SectraToggleButtonProps extends React.HTMLProps<HTMLInputElement> {
     name: string,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
     checked?: boolean,
+    disabled?: boolean
 }
 
 interface SectraToggleButtonState {
@@ -30,9 +31,20 @@ export class SectraRadioButton extends React.Component<SectraToggleButtonProps, 
         const {
             name,
             checked,
+            disabled,
             ...htmlProps
         } = this.props;
         let labelClass = "btn-default btn btn-secondary";
+
+        if(disabled) {
+            labelClass += " disabled"
+            return (
+                <label className={labelClass}>
+                    <input type="radio" name={name} disabled={disabled} data-field-type="radio button" autoComplete="off" {...htmlProps}/>{htmlProps.value}
+                </label>
+            )
+        }
+
         if(checked) labelClass += " active";
         if (this.state.focused) labelClass += " focus";
         else labelClass = labelClass.replace(" focus", "");
