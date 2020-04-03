@@ -32,12 +32,14 @@ export class SectraTextArea extends React.Component<SectraTextAreaProps, {}> {
             onChange,
             onInputChange,
             onInputBlur,
+            preventOutput,
             ...htmlProps
         } = this.props;
         const className = "form-control";
+        let dataFieldType = preventOutput ? null : "textarea";
         return (
                 <textarea onBlur={this.handleBlur} onChange={this.handleChange} name={name}
-                    data-field-type="textarea" className={className} {...htmlProps}></textarea>
+                    data-field-type={dataFieldType} className={className} {...htmlProps}></textarea>
         );
     }
 }

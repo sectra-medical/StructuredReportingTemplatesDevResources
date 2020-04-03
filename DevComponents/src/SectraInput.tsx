@@ -35,9 +35,11 @@ export class SectraInput extends React.Component<SectraInputProps, {}> {
             onChange,
             onInputChange,
             onInputBlur,
+            preventOutput,
             ...htmlProps
         } = this.props;
-        const dataFieldType = type == "datetime-local" ? "date" : type;
+        let dataFieldType = type == "datetime-local" ? "date" : type;
+        dataFieldType = preventOutput ? null : dataFieldType;
         const className = "form-control input-xs" + (!bsSize || bsSize == "xl" ? "" : " inline-input-" + bsSize);
         return (
                 <input onBlur={this.handleBlur} onChange={this.handleChange} type={type} name={name}

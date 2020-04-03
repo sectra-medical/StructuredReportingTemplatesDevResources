@@ -9,6 +9,7 @@ export interface SectraButtonGroupProps extends React.HTMLProps<HTMLInputElement
     onStateChange?: (buttonText: string) => void;
     justify?: boolean;
     disable?: number[];
+    preventOutput?: boolean;
 }
 
 export declare class SectraButtonGroup extends React.Component<SectraButtonGroupProps, any> {
@@ -24,6 +25,7 @@ export interface SectraInputProps extends React.HTMLProps<HTMLInputElement> {
     bsSize?: string;
     onInputChange?: (val: string) => void;
     onInputBlur?: (val: string) => void;
+    preventOutput?: boolean;
 }
 
 export declare class SectraInput extends React.Component<SectraInputProps, any> {
@@ -37,6 +39,7 @@ export interface SectraTextAreaProps extends React.HTMLProps<HTMLTextAreaElement
 	name: string;
 	onInputChange?: (val: string) => void;
 	onInputBlur?: (val: string) => void;
+    preventOutput?: boolean;
 }
 
 export declare class SectraTextArea extends React.Component<SectraTextAreaProps, any> {
@@ -68,6 +71,7 @@ export interface SectraSelectProps extends React.HTMLProps<HTMLSelectElement> {
     keys?: string[];
 	defaultOptionText?: string;
     onStateChange?: (x: string) => void;
+    preventOutput?: boolean;
 }
 
 export declare class SectraSelect extends React.Component<SectraSelectProps, any> {
@@ -83,6 +87,7 @@ export interface SectraCheckButtonProps extends React.HTMLProps<HTMLInputElement
     checked?: boolean;
     onStateChange?: (x: boolean) => void;
     partOfGroup?: boolean;
+    preventOutput?: boolean;
 }
 
 export declare class SectraCheckButton extends React.Component<SectraCheckButtonProps, any> {

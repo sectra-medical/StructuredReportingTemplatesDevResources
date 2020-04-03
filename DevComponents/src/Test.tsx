@@ -51,6 +51,9 @@ export class Test extends React.Component<{}, TestState> {
                 <SectraRow labelText="Disabled button group demo" labelFor="disabled-button-group">
                     <SectraButtonGroup id="disabled-button-group" name="disabled button group" buttonValues={values} disable={[1]}/>
                 </SectraRow>
+                <SectraRow labelText="Prevent output" labelFor="prevent-output">
+                    <SectraButtonGroup id="prevent-output" name="Prevent output" buttonValues={["a","b"]} preventOutput={true} />
+                </SectraRow>
                 <SectraRow labelText="Dynamic select demo" labelFor="dynamic-select">
                     <SectraSelect id="dynamic-select" name="Dynamic select demo" optionValues={values} defaultOptionText="Select..." onStateChange={this.onSelectChange} />
                     <SectraInput name="Md input" type="text" bsSize="sm" hidden={this.state.selectState !== values[0]} />

@@ -46,6 +46,7 @@ export class SectraButtonGroup extends React.Component<SectraButtonGroupProps, S
             id,
             justify,
             disable,
+            preventOutput,
             ...htmlProps
         } = this.props;
         
@@ -53,7 +54,10 @@ export class SectraButtonGroup extends React.Component<SectraButtonGroupProps, S
         return (
             <div className={classNames} data-toggle="buttons">
                 {this.props.buttonValues.map(function(value, index) {
-                    return <SectraRadioButton id={value === buttonValues[0] ? id : null} key={value} name={name} disabled={disable !== undefined ? disable.indexOf(index) > - 1 : false} value={value} onChange={handleChange} checked={stateValue === value} {...htmlProps}></SectraRadioButton>
+                    return <SectraRadioButton id={value === buttonValues[0] ? id : null} key={value} name={name}
+                        disabled={disable !== undefined ? disable.indexOf(index) > - 1 : false} value={value}
+                        onChange={handleChange} checked={stateValue === value} 
+                        preventOutput={preventOutput} {...htmlProps}></SectraRadioButton>
                 })}
             </div>
         );

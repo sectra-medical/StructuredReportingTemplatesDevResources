@@ -50,7 +50,8 @@ A bootstrap button group that calls a callback when a new button is selected.
 **defaultButton**?: string - The button that should be pressed from the start  
 **onStateChange**?: (string) => void - The callback function to run when a new button is selected  
 **justify**?: boolean - Removes the ```"btn-group-justified"``` class from the button group if false  
-**disable**?: number[] - The indices of buttons that should be disabled within the button group  
+**disable**?: number[] - The indices of buttons that should be disabled within the button group
+**preventOutput**?: boolean - If true, this component will not generate any report or json output
 **(Any input or data- attribute)**
 
 ### Example
@@ -67,6 +68,7 @@ Has the data-field-type="selection_list".
 **keys**?: string[] - Keys for react to identify the options. If provided, one key for each option value must be provided. If not provided, optionValues will be used as keys.  
 **defaultOptionText**?: - If set, this option will be defaulted in the dropdown, however this option is not listed inside the dropdown. This should be used as a placeholder string, for example "Select an option..." If this is not used, the first option will be defaulted.  
 **onStateChange**?: (string) => void - The callback function to run when a new option is selected  
+**preventOutput**?: boolean - If true, this component will not generate any report or json output
 **(Any select or data- attribute)**
 
 ### Example
@@ -82,6 +84,7 @@ Has the same data-field-type as the specified inputType prop.
 **bsSize**?: string - can be anyone of "xs", "sm", "md", "lg" or "xl" where xl will cover the whole container (default "xl").  
 **onInputChange**?: (val: string) => void - The callback function to run when input text is changed.  
 **onInputBlur**?: (val: string) => void - The callback function to run when the input loses focus.  
+**preventOutput**?: boolean - If true, this component will not generate any report or json output
 **(Any input or data- attribute)**
 
 ### Example
@@ -95,6 +98,7 @@ Has the data-field-type="textarea".
 **name**: string - Normal html name.  
 **onInputChange**?: (val: string) => void - The callback function to run when input text is changed.  
 **onInputBlur**?: (val: string) => void - The callback function to run when the textarea loses focus.  
+**preventOutput**?: boolean - If true, this component will not generate any report or json output.
 
 ### Example
 ```<SectraTextArea name="Comment" />```
@@ -109,6 +113,7 @@ Has the data-field-type="checkbox"
 **checked**?: boolean - Set the check state of the button (default false).  
 **onStateChange**?: (checked: boolean) => void - The callback function to run when the check button is toggled.  
 **partOfGroup**?: boolean - If the checkbutton is part of a button group (default false but is automatically true if the parent is a SectraCheckButtonGroup). 
+**preventOutput**?: boolean - If true, this component will not generate any report or json output.
 
 ### Example
 ```<SectraCheckButton name="Include comment" value="Include comment">```
