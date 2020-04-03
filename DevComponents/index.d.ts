@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { SectraToggleButtonProps } from './src/SectraRadioButton';
-
 
 export interface SectraButtonGroupProps extends React.HTMLProps<HTMLInputElement> {
     name: string;
@@ -89,6 +87,16 @@ export interface SectraCheckButtonProps extends React.HTMLProps<HTMLInputElement
     partOfGroup?: boolean;
     preventOutput?: boolean;
 }
+
+
+export interface SectraToggleButtonProps extends React.HTMLProps<HTMLInputElement> {
+    name: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    checked?: boolean;
+    disabled?: boolean;
+    preventOutput?: boolean;
+}
+
 
 export declare class SectraCheckButton extends React.Component<SectraCheckButtonProps, any> {
 }

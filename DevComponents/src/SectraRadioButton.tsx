@@ -1,12 +1,5 @@
 import * as React from "react";
-
-export interface SectraToggleButtonProps extends React.HTMLProps<HTMLInputElement> {
-    name: string,
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    checked?: boolean,
-    disabled?: boolean,
-    preventOutput?: boolean
-}
+import {SectraToggleButtonProps} from "../index";
 
 interface SectraToggleButtonState {
     focused: boolean
