@@ -1,12 +1,14 @@
 {
   "name": "@sectra/srt-components",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Development components for creating structured report templates to Sectra IDS7.",
   "main": "./dist/bundle.js",
   "types": "index.d.ts",
   "author": "Sectra",
   "license": "MIT",
-  "publishConfig": {"registry":"https://registry.npmjs.org"},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "testbuild": "webpack --config webpack.test.config.js"
