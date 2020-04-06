@@ -1,10 +1,7 @@
 import * as React from "react";
 import { Collapse, Glyphicon, Col, Grid, Row } from "react-bootstrap";
 
-import { SectraRow } from "../sectra-components/SectraRow";
-import { SectraInput } from "../sectra-components/SectraInput";
-import { SectraSelect } from "../sectra-components/SectraSelect";
-import { SectraButtonGroup } from "../sectra-components/SectraButtonGroup";
+import { SectraRow, SectraInput, SectraSelect, SectraButtonGroup } from "@sectra/srt-components";
 import { Size } from "./Size";
 import { LesionTexts } from "./LesionTexts";
 import { IPixelData } from "../interfaces/PixelData";
@@ -52,7 +49,7 @@ export class Lesion extends React.Component<LesionProps, LesionState> {
         this.updatePirads = this.updatePirads.bind(this);
         this.collapseDiv = React.createRef();
 
-        this.piradsElement = <SectraButtonGroup name={this.piradsId + "s"} buttonValues={this.oneToFive} checkedButton={""} key={"pirad" + this.props.keyId} onStateChange={this.updatePirads} templateFieldOnly={true}></SectraButtonGroup>
+        this.piradsElement = <SectraButtonGroup name={this.piradsId + "s"} buttonValues={this.oneToFive} checkedButton={""} key={"pirad" + this.props.keyId} onStateChange={this.updatePirads} preventOutput={true}></SectraButtonGroup>
     }
 
     calculatePiradsVal(zone: string, dwi: string, t2: string, dce: string, currentVal: string) {
@@ -187,21 +184,21 @@ export class Lesion extends React.Component<LesionProps, LesionState> {
                 <Collapse in={this.state.open}>
                 <div>
                     <div className="">
-                        <SectraRow labelFor={zoneId} labelText="Zone" indentLevel={indentLevel}>
-                            <SectraInput inputType="text" bsSize="xl" id={zoneId} name={zoneId} value={this.state.zone} hidden></SectraInput>
-                            <SectraButtonGroup name={zoneId + "s"} buttonValues={["Peripheral", "Transition"]} checkedButton={defaultZone} onStateChange={this.updateZone} templateFieldOnly={true}></SectraButtonGroup>
+                        <SectraRow labelFor={zoneId} labelText="Zone">
+                            <SectraInput type="text" bsSize="xl" id={zoneId} name={zoneId} value={this.state.zone} hidden></SectraInput>
+                            <SectraButtonGroup name={zoneId + "s"} buttonValues={["Peripheral", "Transition"]} checkedButton={defaultZone} onStateChange={this.updateZone} preventOutput={true}></SectraButtonGroup>
                         </SectraRow>
-                        <SectraRow labelFor={sectorId} labelText="Largest part in sector" indentLevel={indentLevel}>
+                        <SectraRow labelFor={sectorId} labelText="Largest part in sector">
                             <p id={sectorId}>{sector}</p>
                         </SectraRow>
                         <Size idExtension={this.props.idExtension} id={sizeId} />
-                        <SectraRow labelFor={epeId} labelText="EPE" indentLevel={indentLevel}>
-                            <SectraInput inputType="text" id={epeId} name={epeId} value={this.state.epeVal} bsSize="xl" hidden></SectraInput>
-                            <SectraButtonGroup name={epeId + "s"} buttonValues={yesNoEq} onStateChange={(s: string) => this.setState({epeVal: s})} templateFieldOnly={true}></SectraButtonGroup>
+                        <SectraRow labelFor={epeId} labelText="EPE">
+                            <SectraInput type="text" id={epeId} name={epeId} value={this.state.epeVal} bsSize="xl" hidden></SectraInput>
+                            <SectraButtonGroup name={epeId + "s"} buttonValues={yesNoEq} onStateChange={(s: string) => this.setState({epeVal: s})} preventOutput={true}></SectraButtonGroup>
                         </SectraRow>
-                        <SectraRow labelFor={sviId} labelText="SVI" indentLevel={indentLevel}>
-                            <SectraInput inputType="text" id={sviId} name={sviId} value={this.state.sviVal} bsSize="xl" hidden></SectraInput>
-                            <SectraButtonGroup name={sviId + "s"} buttonValues={yesNoEq} onStateChange={(s: string) => this.setState({sviVal: s})} templateFieldOnly={true}></SectraButtonGroup>
+                        <SectraRow labelFor={sviId} labelText="SVI">
+                            <SectraInput type="text" id={sviId} name={sviId} value={this.state.sviVal} bsSize="xl" hidden></SectraInput>
+                            <SectraButtonGroup name={sviId + "s"} buttonValues={yesNoEq} onStateChange={(s: string) => this.setState({sviVal: s})} preventOutput={true}></SectraButtonGroup>
                         </SectraRow>
                     </div>
                     <Grid>
@@ -211,19 +208,19 @@ export class Lesion extends React.Component<LesionProps, LesionState> {
                         </Row>
                     </Grid>
                     <div className="">
-                        <SectraRow labelFor={t2Id} labelText="T2" indentLevel={indentLevel}>
-                            <SectraButtonGroup id={t2Id} name={t2Id} buttonValues={this.oneToFive} onStateChange={this.updateT2Text} templateFieldOnly={true}></SectraButtonGroup>
+                        <SectraRow labelFor={t2Id} labelText="T2">
+                            <SectraButtonGroup id={t2Id} name={t2Id} buttonValues={this.oneToFive} onStateChange={this.updateT2Text} preventOutput={true}></SectraButtonGroup>
                             <p>{this.state.t2Text}</p>
                         </SectraRow>
-                        <SectraRow labelFor={dwiId} labelText="DWI" indentLevel={indentLevel}>
-                            <SectraButtonGroup id={dwiId} name={dwiId} buttonValues={this.oneToFive} onStateChange={this.updateDwiText} templateFieldOnly={true}></SectraButtonGroup>
+                        <SectraRow labelFor={dwiId} labelText="DWI">
+                            <SectraButtonGroup id={dwiId} name={dwiId} buttonValues={this.oneToFive} onStateChange={this.updateDwiText} preventOutput={true}></SectraButtonGroup>
                             <p>{this.state.dwiText}</p>
                         </SectraRow>
-                        <SectraRow labelFor={dceId} labelText="DCE" indentLevel={indentLevel}>
-                            <SectraButtonGroup id={dceId} name={dceId} buttonValues={["Absent", "Early enhancement", "No enhancement"]} onStateChange={this.updateDce} defaultButton="abcent" templateFieldOnly={true}></SectraButtonGroup>
+                        <SectraRow labelFor={dceId} labelText="DCE">
+                            <SectraButtonGroup id={dceId} name={dceId} buttonValues={["Absent", "Early enhancement", "No enhancement"]} onStateChange={this.updateDce} checkedButton="abcent" preventOutput={true}></SectraButtonGroup>
                         </SectraRow>
-                        <SectraRow labelFor={this.piradsId} labelText="PIRADS" indentLevel={indentLevel}>
-                            <SectraInput inputType="text" bsSize="xl" value={this.state.piradsVal} name={this.piradsId} id={this.piradsId} hidden></SectraInput>
+                        <SectraRow labelFor={this.piradsId} labelText="PIRADS">
+                            <SectraInput type="text" bsSize="xl" value={this.state.piradsVal} name={this.piradsId} id={this.piradsId} hidden></SectraInput>
                             {this.piradsElement}
                         </SectraRow>
                     </div>

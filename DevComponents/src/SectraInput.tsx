@@ -1,14 +1,7 @@
 import * as React from "react";
 import {HTMLProps} from "react";
+import {SectraInputProps} from "../index";
 
-
-interface SectraInputProps extends React.HTMLProps<HTMLInputElement> {
-    name: string;
-    type: string;
-    bsSize?: string;
-    onInputChange?: (val: string) => void;
-    onInputBlur?: (val: string) => void;
-}
 
 export class SectraInput extends React.Component<SectraInputProps, {}> {
     constructor(props: any, context: any) {
@@ -42,9 +35,11 @@ export class SectraInput extends React.Component<SectraInputProps, {}> {
             onChange,
             onInputChange,
             onInputBlur,
+            preventOutput,
             ...htmlProps
         } = this.props;
-        const dataFieldType = type == "datetime-local" ? "date" : type;
+        let dataFieldType = type == "datetime-local" ? "date" : type;
+        dataFieldType = preventOutput ? null : dataFieldType;
         const className = "form-control input-xs" + (!bsSize || bsSize == "xl" ? "" : " inline-input-" + bsSize);
         return (
                 <input onBlur={this.handleBlur} onChange={this.handleChange} type={type} name={name}

@@ -1,13 +1,7 @@
 import * as React from "react";
 import {SectraRadioButton} from "./SectraRadioButton";
+import {SectraButtonGroupProps} from "../index";
 
-
-interface SectraButtonGroupProps extends React.HTMLProps<HTMLInputElement> {
-    name: string;
-    buttonValues: string[];
-    checkedButton?: string;
-    onStateChange?: (buttonText: string) => void;
-}
 
 interface SectraButtonGroupState {
     value: string;
@@ -50,12 +44,20 @@ export class SectraButtonGroup extends React.Component<SectraButtonGroupProps, S
             onStateChange,
             ref,
             id,
+            justify,
+            disable,
+            preventOutput,
             ...htmlProps
         } = this.props;
+        
+        const classNames = (justify !== false ? "btn-group-justified " : "") + "btn-group btn-group-xs";
         return (
-            <div className="btn-group-justified btn-group btn-group-xs" data-toggle="buttons">
-                {this.props.buttonValues.map(function(value) {
-                    return <SectraRadioButton id={value === buttonValues[0] ? id : null} key={value} name={name} value={value} onChange={handleChange} checked={stateValue === value} {...htmlProps}></SectraRadioButton>
+            <div className={classNames} data-toggle="buttons">
+                {this.props.buttonValues.map(function(value, index) {
+                    return <SectraRadioButton id={value === buttonValues[0] ? id : null} key={value} name={name}
+                        disabled={disable !== undefined ? disable.indexOf(index) > - 1 : false} value={value}
+                        onChange={handleChange} checked={stateValue === value} 
+                        preventOutput={preventOutput} {...htmlProps}></SectraRadioButton>
                 })}
             </div>
         );

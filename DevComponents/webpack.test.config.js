@@ -1,13 +1,10 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-
-module.exports = config = {
-    mode: "production",
-    entry: "./src/index.ts",
+module.exports = {
+    mode: 'development',
+    entry: "./src/testindex.tsx",
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist",
-        library: 'SrtBasic',
-        libraryTarget: 'umd'
+        path: __dirname + "/test-build"
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -26,33 +23,28 @@ module.exports = config = {
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
 
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+
+            { test: /\.(svg|woff2?|ttf|eot)/, loader: "url-loader?limit=100000" }
+
         ]
     },
     plugins: [
         new CopyWebpackPlugin([
-            { from: './src/*.css', to: '[name].css' }
+            { from: './*.html' },
+            {from:'./*.css'}
         ])
     ],
     performance: {
         hints: false
-    },
+    }
 
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
-    externals: {
-        react: {
-            root: 'React',
-            commonjs2: 'react',
-            commonjs: 'react',
-            amd: 'react',
-        },
-        'react-dom': {
-            root: 'ReactDOM',
-            commonjs2: 'react-dom',
-            commonjs: 'react-dom',
-            amd: 'react-dom',
-        },
-    }
-}
+    // externals: {
+    //    "react": "React",
+    //    "react-dom": "ReactDOM"
+    //}
+};

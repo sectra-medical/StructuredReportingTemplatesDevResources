@@ -1,10 +1,5 @@
 import * as React from "react";
-
-interface SectraToggleButtonProps extends React.HTMLProps<HTMLInputElement> {
-    name: string,
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    checked?: boolean,
-}
+import {SectraToggleButtonProps} from "../index";
 
 interface SectraToggleButtonState {
     focused: boolean
@@ -30,15 +25,31 @@ export class SectraRadioButton extends React.Component<SectraToggleButtonProps, 
         const {
             name,
             checked,
+            disabled,
+            preventOutput,
             ...htmlProps
         } = this.props;
         let labelClass = "btn-default btn btn-secondary";
+        let dataFieldType = preventOutput ? null : "radio button";
+
+        if(disabled) {
+            labelClass += " disabled"
+            return (
+                <label className={labelClass}>
+                    <input type="radio" name={name} disabled={disabled} data-field-type={dataFieldType}
+                        autoComplete="off" {...htmlProps}/>{htmlProps.value}
+                </label>
+            )
+        }
+
         if(checked) labelClass += " active";
         if (this.state.focused) labelClass += " focus";
         else labelClass = labelClass.replace(" focus", "");
         return (
             <label className={labelClass}>
-                <input type="radio" onBlur={this.handleBlur} onFocus={this.handleFocus} name={name} data-field-type="radio button" autoComplete="off" checked={!!checked} {...htmlProps} onChange={this.props.onChange}/>{htmlProps.value}
+                <input type="radio" onBlur={this.handleBlur} onFocus={this.handleFocus} name={name}
+                    data-field-type={dataFieldType} autoComplete="off" checked={!!checked} {...htmlProps}
+                    onChange={this.props.onChange}/>{htmlProps.value}
             </label>
         )
     }

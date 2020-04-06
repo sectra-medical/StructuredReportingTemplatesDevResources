@@ -1,26 +1,43 @@
 {
-  "name": "demo",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "build": "webpack --config webpack.config.js"
-  },
+  "name": "@sectra/srt-components",
+  "version": "1.1.1",
+  "description": "Development components for creating structured report templates to Sectra IDS7.",
   "main": "./dist/bundle.js",
+  "types": "index.d.ts",
+  "author": "Sectra",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "testbuild": "webpack --config webpack.test.config.js"
+  },
   "dependencies": {
+    "react-bootstrap": "^0.32.4"
+  },
+  "devDependencies": {
     "@types/classnames": "^2.2.6",
     "@types/react": "^16.4.14",
     "@types/react-bootstrap": "^0.32.14",
     "@types/react-dom": "^16.0.7",
-    "react": "^16.5.2",
-    "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.5.2",
-    "style-loader": "^0.23.1"
-  },
-  "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
+    "bootstrap": "^3.4.1",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^2.1.1",
+    "file-loader": "^6.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "source-map-loader": "^0.2.4",
-    "typescript": "^3.0.3"
+    "style-loader": "^0.23.1",
+    "typescript": "^3.0.3",
+    "url-loader": "^4.0.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^4.0.0-beta.2"
+  },
+  "peerDependencies": {
+    "bootstrap": "^3.4.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   }
 }

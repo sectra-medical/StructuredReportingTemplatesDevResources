@@ -1,8 +1,6 @@
 import * as React from "react";
+import {SectraCheckButtonGroupProps} from "../index";
 
-
-interface SectraCheckButtonGroupProps extends React.HTMLProps<HTMLDivElement> {
-}
 
 export class SectraCheckButtonGroup extends React.Component<SectraCheckButtonGroupProps, {}> {
     constructor(props: SectraCheckButtonGroupProps, context: any) {

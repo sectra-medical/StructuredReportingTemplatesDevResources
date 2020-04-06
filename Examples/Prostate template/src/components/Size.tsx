@@ -1,7 +1,6 @@
 import * as React from "react";
 
-import { SectraRow } from "../sectra-components/SectraRow";
-import { SectraInput } from "../sectra-components/SectraInput";
+import { SectraRow, SectraInput } from "@sectra/srt-components";
 
 
 interface SizeProps {
@@ -102,33 +101,33 @@ export class Size extends React.Component<SizeProps, SizeState> {
         return (
 			<div>
 				{this.props.includePsa ? 
-				<SectraRow labelFor={psaId} labelText="PSA" indentLevel={1}>
-					<SectraInput id={psaId} bsSize="sm" name="PSA" inputType="number" onInputChange={this.psaChanged} />
+				<SectraRow labelFor={psaId} labelText="PSA">
+					<SectraInput id={psaId} bsSize="sm" name="PSA" type="number" onInputChange={this.psaChanged} />
 					ng/mL
 				</SectraRow> : null}
-				<SectraRow labelFor={sizeId} labelText="Size" indentLevel={1}>
-					<SectraInput inputType="text" name={sizeId} id={sizeId} bsSize="xl" value={this.state.sizeValue} hidden></SectraInput>
+				<SectraRow labelFor={sizeId} labelText="Size">
+					<SectraInput type="text" name={sizeId} id={sizeId} bsSize="xl" value={this.state.sizeValue} hidden></SectraInput>
 					{this.props.includePsa ?
 						<div>
-							<SectraInput name={sizeId + "s"} inputType="number" bsSize="xs" placeholder="LR" onInputChange={this.lrChanged} templateFieldOnly={true} />
+							<SectraInput name={sizeId + "s"} type="number" bsSize="xs" placeholder="LR" onInputChange={this.lrChanged} preventOutput={true} />
 							<span className="inline-text">x</span>
-							<SectraInput name={apName} inputType="number" bsSize="xs" placeholder="AP" onInputChange={this.apChanged} templateFieldOnly={true} />
+							<SectraInput name={apName} type="number" bsSize="xs" placeholder="AP" onInputChange={this.apChanged} preventOutput={true} />
 							<span className="inline-text">x</span>
-							<SectraInput name={ccName} inputType="number" bsSize="xs" placeholder="CC" onInputChange={this.ccChanged} templateFieldOnly={true} />
+							<SectraInput name={ccName} type="number" bsSize="xs" placeholder="CC" onInputChange={this.ccChanged} preventOutput={true} />
 						</div>
-					: <SectraInput name={ccName} inputType="number" bsSize="sm" placeholder="CC" onInputChange={this.ccChanged} templateFieldOnly={true} />
+					: <SectraInput name={ccName} type="number" bsSize="sm" placeholder="CC" onInputChange={this.ccChanged} preventOutput={true} />
 					}
 					mm
 				</SectraRow>
 				{this.props.includePsa ?
-				<SectraRow labelFor={volumeId} labelText="Volume" indentLevel={1}>
-					<SectraInput id={volumeId} name={volumeId} inputType="text" bsSize="sm" value={this.state.volume} readOnly={true}/>
+				<SectraRow labelFor={volumeId} labelText="Volume">
+					<SectraInput id={volumeId} name={volumeId} type="text" bsSize="sm" value={this.state.volume} readOnly={true}/>
 					cm³
 				</SectraRow>
 				: null}
 				{this.props.includePsa ?
-				<SectraRow labelFor={psadId} labelText="PSAD" indentLevel={1}>
-					<SectraInput inputType="number" id={psadId} name={psadId} bsSize="sm" value={this.state.psad} readOnly={true}></SectraInput>
+				<SectraRow labelFor={psadId} labelText="PSAD">
+					<SectraInput type="number" id={psadId} name={psadId} bsSize="sm" value={this.state.psad} readOnly={true}></SectraInput>
 					ng/ml/cc
 				</SectraRow>
 				: null}

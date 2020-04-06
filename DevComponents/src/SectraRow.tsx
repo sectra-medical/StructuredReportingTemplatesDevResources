@@ -3,14 +3,7 @@ import * as React from "react";
 import {Row} from "react-bootstrap";
 import {Col} from "react-bootstrap";
 import {Grid} from "react-bootstrap";
-
-
-interface SectraRowProps extends React.HTMLProps<HTMLLabelElement> {
-    children?: React.ReactNode;
-    labelText?: string;
-    labelFor?: string;
-    marginTop?: number;
-}
+import {SectraRowProps} from "../index";
 
 export class SectraRow extends React.Component<SectraRowProps, {}> {
 
@@ -24,6 +17,7 @@ export class SectraRow extends React.Component<SectraRowProps, {}> {
             labelText,
             children,
             marginTop,
+            abbrTitle,
             ...props
         } = this.props;
 
@@ -32,11 +26,15 @@ export class SectraRow extends React.Component<SectraRowProps, {}> {
         if (typeof(marginTop) !== "undefined") {
             topMargin = this.props.marginTop + "rem";
         }
+
+        const label = labelText ? <label htmlFor={labelFor} {...props}>{labelText}:</label> : <React.Fragment />;
+        const abbrLabel = <abbr title={abbrTitle}>{label}</abbr>
+
         return (
             <Grid>
                 <Row className={className} style={{marginTop: topMargin}}>
                     <Col xs={4}>
-                        {labelText ? <label htmlFor={labelFor} {...props}>{labelText}:</label> : null}
+                        {abbrTitle ? abbrLabel : label}
                     </Col>
                     <Col xs={8}>
                         {children}

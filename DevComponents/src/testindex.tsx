@@ -1,12 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Demo } from "./Demo";
-import './bootstrap.min.css';
+import { Test } from "./Test";
+import 'bootstrap/dist/css/bootstrap.css';
 import './sectra-styling.css';
 
 ReactDOM.render(
-    <Demo />,
+    <Test />,
     document.getElementById("react-container")
 );
 

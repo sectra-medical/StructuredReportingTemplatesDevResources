@@ -1,21 +1,21 @@
 import * as React from "react";
 
-import { SectraButtonGroup } from "./SectraComponents/SectraButtonGroup";
-import { SectraCheckButton } from "./SectraComponents/SectraCheckButton";
-import { SectraInput } from "./SectraComponents/SectraInput";
-import { SectraRow } from "./SectraComponents/SectraRow";
-import { SectraSelect } from "./SectraComponents/SectraSelect";
-import { SectraTextArea } from "./SectraComponents/SectraTextArea";
-import { SectraCheckButtonGroup } from "./SectraComponents/SectraCheckButtonGroup";
+import { SectraButtonGroup } from "./SectraButtonGroup";
+import { SectraCheckButton } from "./SectraCheckButton";
+import { SectraInput } from "./SectraInput";
+import { SectraRow } from "./SectraRow";
+import { SectraSelect } from "./SectraSelect";
+import { SectraTextArea } from "./SectraTextArea";
+import { SectraCheckButtonGroup } from "./SectraCheckButtonGroup";
 
 
-interface DemoState {
+interface TestState {
     buttonState: string,
     selectState: string,
     checkState: boolean
 }
 
-export class Demo extends React.Component<{}, DemoState> {
+export class Test extends React.Component<{}, TestState> {
 
     constructor(props: any, context: any) {
         super(props, context);
@@ -38,12 +38,21 @@ export class Demo extends React.Component<{}, DemoState> {
     }
 
     render() {
-        const values = ["Opt 1", "Opt 2"];
+        const values = ["Opt 1", "Option 2"];
         return (
             <div>
                 <SectraRow labelText="Dynamic button group demo" labelFor="dynamic-button-group">
                     <SectraButtonGroup id="dynamic-button-group" name="Dynamic button group" buttonValues={values} onStateChange={this.onButtonChange} />
                     <SectraInput name="Xs input" type="text" bsSize="xs" hidden={this.state.buttonState !== values[0]} />
+                </SectraRow>
+                <SectraRow labelText="Unjustified button group demo" labelFor="unjustified-button-group">
+                    <SectraButtonGroup id="unjustified-button-group" name="unjustified button group" buttonValues={values} justify={false} />
+                </SectraRow>
+                <SectraRow labelText="Disabled button group demo" labelFor="disabled-button-group">
+                    <SectraButtonGroup id="disabled-button-group" name="disabled button group" buttonValues={values} disable={[1]}/>
+                </SectraRow>
+                <SectraRow labelText="Prevent output" labelFor="prevent-output">
+                    <SectraButtonGroup id="prevent-output" name="Prevent output" buttonValues={["a","b"]} preventOutput={true} />
                 </SectraRow>
                 <SectraRow labelText="Dynamic select demo" labelFor="dynamic-select">
                     <SectraSelect id="dynamic-select" name="Dynamic select demo" optionValues={values} defaultOptionText="Select..." onStateChange={this.onSelectChange} />
@@ -62,6 +71,9 @@ export class Demo extends React.Component<{}, DemoState> {
                 </SectraRow>}
                 <SectraRow labelFor="textarea" labelText="Text area">
                     <SectraTextArea name="Textarea" id="textarea" />
+                </SectraRow>
+                <SectraRow abbrTitle='Testing Abbr Title' labelText="TAT">
+                    <SectraInput name={'Input'} type={'text'} />
                 </SectraRow>
             </div>
         );

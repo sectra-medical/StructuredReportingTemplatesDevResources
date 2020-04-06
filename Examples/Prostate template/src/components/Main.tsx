@@ -1,8 +1,6 @@
 import * as React from "react";
 
-import { SectraRow } from "../sectra-components/SectraRow";
-import { SectraSelect } from "../sectra-components/SectraSelect";
-import { SectraInput } from "../sectra-components/SectraInput";
+import { SectraRow, SectraSelect, SectraInput } from "@sectra/srt-components";
 import { Size } from "./Size";
 import { Lesion } from "./Lesion";
 import { SectorMap } from "./SectorMap";
@@ -60,11 +58,11 @@ export class Main extends React.Component<{}, MainState> {
 				<Row className="show-grid form-row">
 					<Col xs={12}>
 						<Size idExtension={0} id="lr" includePsa={true} />
-						<SectraRow labelFor="blood-artefacts" labelText="Blood artefacts" indentLevel={indentLevel}>
+						<SectraRow labelFor="blood-artefacts" labelText="Blood artefacts">
 							<SectraSelect id="blood-artefacts" name="Blood artefacts" optionValues={["Absent", "Slightly marked", "Important"]}></SectraSelect>
 						</SectraRow>
-						<SectraRow labelFor="adc" labelText="ADC" indentLevel={indentLevel}>
-							<SectraInput inputType="number" id="adc" name="ADC" bsSize="sm" step={0.001}></SectraInput> mm²/s
+						<SectraRow labelFor="adc" labelText="ADC">
+							<SectraInput type="number" id="adc" name="ADC" bsSize="sm" step={0.001}></SectraInput> mm²/s
 						</SectraRow>
 					</Col>
 				</Row>

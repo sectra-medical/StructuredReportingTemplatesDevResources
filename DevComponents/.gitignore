@@ -1,2 +1,4 @@
 dist/
+test-build/
+.vscode/
 node_modules/
