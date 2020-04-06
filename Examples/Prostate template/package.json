@@ -7,10 +7,13 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@sectra/srt-components": "^1.1.1",
     "@types/classnames": "^2.2.6",
     "@types/react": "^16.9.19",
     "@types/react-bootstrap": "^0.32.14",
     "@types/react-dom": "^16.9.5",
+    "bootstrap": "^3.3.7",
+    "css-loader": "^3.4.2",
     "react": "^16.12.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.12.0",
@@ -19,6 +22,7 @@
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
     "copy-webpack-plugin": "^4.5.2",
+    "file-loader": "^6.0.0",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.0.3"
   }
