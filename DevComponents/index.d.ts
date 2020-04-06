@@ -87,6 +87,7 @@ export interface SectraCanvasProps extends React.HTMLProps<HTMLCanvasElement> {
     defaultImage?: string;
     paintType?: "Brush" | "Spray";
     onPaint?: (imgData: ImageData) => void;
+    onDefaultImageLoaded?: (imgData: ImageData) => void;
 }
 
 export declare class SectraCanvas extends React.Component<SectraCanvasProps, any> {

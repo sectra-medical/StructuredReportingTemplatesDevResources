@@ -129,6 +129,9 @@ export class SectraCanvas extends React.Component<SectraCanvasProps, SectraCanva
     private loadDefaultImage(event: React.SyntheticEvent<HTMLImageElement>) {
         this.ctx.drawImage(event.currentTarget, 0, 0);
         this.ctx.stroke();
+        if (this.props.onDefaultImageLoaded) {
+            this.props.onDefaultImageLoaded(this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height));
+        }
     }
 
     public componentDidMount() {
