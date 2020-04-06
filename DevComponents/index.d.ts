@@ -78,6 +78,22 @@ export declare class SectraSelect extends React.Component<SectraSelectProps, any
 declare module 'sectra-select' {
 }
 
+export interface SectraCanvasProps extends React.HTMLProps<HTMLCanvasElement> {
+    id: string;
+    width?: number;
+    height?: number;
+    backgroundColor?: string;
+    paintColor?: string;
+    defaultImage?: string;
+    paintType?: "Brush" | "Spray";
+    onPaint?: (imgData: ImageData) => void;
+}
+
+export declare class SectraCanvas extends React.Component<SectraCanvasProps, any> {
+}
+
+declare module 'sectra-canvas' {
+}
 
 export interface SectraCheckButtonProps extends React.HTMLProps<HTMLInputElement> {
     name: string;
@@ -96,7 +112,6 @@ export interface SectraToggleButtonProps extends React.HTMLProps<HTMLInputElemen
     disabled?: boolean;
     preventOutput?: boolean;
 }
-
 
 export declare class SectraCheckButton extends React.Component<SectraCheckButtonProps, any> {
 }

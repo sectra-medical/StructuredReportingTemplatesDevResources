@@ -7,6 +7,7 @@ import { SectraRow } from "./SectraRow";
 import { SectraSelect } from "./SectraSelect";
 import { SectraTextArea } from "./SectraTextArea";
 import { SectraCheckButtonGroup } from "./SectraCheckButtonGroup";
+import { SectraCanvas } from "./SectraCanvas";
 
 
 interface TestState {
@@ -75,6 +76,7 @@ export class Test extends React.Component<{}, TestState> {
                 <SectraRow abbrTitle='Testing Abbr Title' labelText="TAT">
                     <SectraInput name={'Input'} type={'text'} />
                 </SectraRow>
+                <SectraCanvas id="test-canvas" paintType="Spray" />
             </div>
         );
     }
