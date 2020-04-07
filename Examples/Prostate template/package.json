@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "@sectra/srt-components": "^1.1.1",
+    "@sectra/srt-components": "^1.2.0",
     "@types/classnames": "^2.2.6",
     "@types/react": "^16.9.19",
     "@types/react-bootstrap": "^0.32.14",
