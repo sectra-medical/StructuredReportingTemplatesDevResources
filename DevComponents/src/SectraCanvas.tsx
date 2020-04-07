@@ -41,7 +41,9 @@ export class SectraCanvas extends React.Component<SectraCanvasProps, SectraCanva
         this.onMouseMove = this.onMouseMove.bind(this);
         this.endPaintEvent = this.endPaintEvent.bind(this);
         this.spray = this.spray.bind(this);
+        this.paint = this.paint.bind(this);
         this.loadDefaultImage = this.loadDefaultImage.bind(this);
+        this.storeImageData = this.storeImageData.bind(this);
         this.state = { imageData: ''}
         this.line = [];
     }
