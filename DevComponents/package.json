@@ -1,6 +1,6 @@
 {
   "name": "@sectra/srt-components",
-  "version": "1.2.0-alpha.3",
+  "version": "1.2.0-alpha.4",
   "description": "Development components for creating structured report templates to Sectra IDS7.",
   "main": "./dist/bundle.js",
   "types": "index.d.ts",

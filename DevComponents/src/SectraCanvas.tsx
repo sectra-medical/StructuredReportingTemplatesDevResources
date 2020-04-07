@@ -2,21 +2,21 @@ import * as React from "react";
 import {SectraCanvasProps} from "../index";
 
 
-interface SectraCanvasState {
+export interface SectraCanvasState {
     imageData: string;
 }
 
-interface IOffset {
+export interface IOffset {
     offsetX: number;
     offsetY: number;
 }
 
-interface ILine {
+export interface ILine {
     start: IOffset;
     stop: IOffset;
 }
 
-interface IPosition {
+export interface IPosition {
     x: number;
     y: number;
 }
