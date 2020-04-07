@@ -6,3 +6,4 @@ export * from './SectraSelect';
 export * from './SectraTextArea';
 export * from './SectraCheckButton';
 export * from './SectraCheckButtonGroup';
+export * from './SectraCanvas';

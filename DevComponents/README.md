@@ -133,10 +133,15 @@ Checkbuttons inside this component will be formed as a button group.
 A canvas where you can paint, the image is saved as base 64 png which can be used to send the image to PACS Dicom.
 
 ### Props
+**id**: string - Identifier of this canvas.
 **width**?: number - Width of canvas in px (default 500)  
 **height**?: number - Height of canvas in px (default 400)  
 **backgroundColor**?: string - Color of canvas background in hex. (default "#FFFFFF")  
-**paintColor**?: string - Color to paint in the canvas with. (default "#EE92C2")  
+**paintColor**?: string - Color to paint in the canvas with. (default "#fd4545")  
+**defaultImage**?: string - Base64 encoded image that will be loaded into the canvas
+**paintType**?: "Brush" | "Spray" - Type of tool to paint with. (default "Brush")
+**onPaint**?: (imageData: ImageData) => void - Called on mouse release
+**onDefaultImageLoaded**?: (imageData: ImageData) => void - Called when specified default image is loaded
 **(Any canvas or data- attribute)**
 
 ### Example
