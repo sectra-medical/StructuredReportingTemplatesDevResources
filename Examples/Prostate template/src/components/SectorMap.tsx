@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Col, Grid, Row, Collapse } from "react-bootstrap";
-import { SectraCanvas } from "@sectra/srt-components";
-import { SectraRow, SectraButtonGroup } from "@sectra/srt-components";
+import { SectraCanvas } from "@sectramedical/srt-components";
+import { SectraRow, SectraButtonGroup } from "@sectramedical/srt-components";
 import { IPixelData } from "../interfaces/PixelData";
 import * as images from "../images";
 

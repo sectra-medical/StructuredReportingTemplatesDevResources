@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Collapse, Glyphicon, Col, Grid, Row } from "react-bootstrap";
 
-import { SectraRow, SectraInput, SectraSelect, SectraButtonGroup } from "@sectra/srt-components";
+import { SectraRow, SectraInput, SectraSelect, SectraButtonGroup } from "@sectramedical/srt-components";
 import { Size } from "./Size";
 import { LesionTexts } from "./LesionTexts";
 import { IPixelData } from "../interfaces/PixelData";

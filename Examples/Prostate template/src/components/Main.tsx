@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { SectraRow, SectraSelect, SectraInput } from "@sectra/srt-components";
+import { SectraRow, SectraSelect, SectraInput } from "@sectramedical/srt-components";
 import { Size } from "./Size";
 import { Lesion } from "./Lesion";
 import { SectorMap } from "./SectorMap";

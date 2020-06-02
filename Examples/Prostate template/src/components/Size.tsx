@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { SectraRow, SectraInput } from "@sectra/srt-components";
+import { SectraRow, SectraInput } from "@sectramedical/srt-components";
 
 
 interface SizeProps {
