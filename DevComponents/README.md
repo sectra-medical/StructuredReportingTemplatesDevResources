@@ -5,7 +5,7 @@ Development components for creating structured report templates to Sectra IDS7.
 # Installing
 In your project folder, execute:
 ```
-npm install -s @sectra/srt-components
+npm install -s @sectramedical/srt-components
 ```
 
 For styling to work you need to include the Bootstrap v3.4.1 CSS and
