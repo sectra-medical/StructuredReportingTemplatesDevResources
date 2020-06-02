@@ -1,5 +1,5 @@
 {
-  "name": "@sectra/srt-components",
+  "name": "@sectramedical/srt-components",
   "version": "1.2.0",
   "description": "Development components for creating structured report templates to Sectra IDS7.",
   "main": "./dist/bundle.js",
