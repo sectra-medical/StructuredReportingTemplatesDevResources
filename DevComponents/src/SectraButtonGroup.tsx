@@ -18,7 +18,7 @@ export class SectraButtonGroup extends React.Component<SectraButtonGroupProps, S
     }
 
     componentDidUpdate(prevProps: SectraButtonGroupProps) {
-        if (prevProps.checkedButton !== this.props.checkedButton) {
+        if (typeof this.props.checkedButton !== "undefined" && this.props.checkedButton !== null && this.state.value !== this.props.checkedButton) {
             this.setState({value: this.props.checkedButton});
         }
     }
