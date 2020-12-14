@@ -53,7 +53,7 @@ export class SectraCheckButton extends React.Component<SectraCheckButtonProps, S
             preventOutput,
             ...htmlProps
         } = this.props;
-        let labelClass = "btn-default btn btn-secondary";
+        let labelClass = (this.props.buttonStyle === false) ? "spx-checkbox" : "btn-default btn btn-secondary";
         let dataFieldType = preventOutput ? null : "checkbox";
         if(this.state.checked) labelClass += " active";
         if (this.state.focused) labelClass += " focus";
@@ -63,7 +63,7 @@ export class SectraCheckButton extends React.Component<SectraCheckButtonProps, S
             <label className={labelClass}>
                 <input type="checkbox" onBlur={this.handleBlur} onFocus={this.handleFocus} name={name}
                     data-field-type={dataFieldType} autoComplete="off" value={value} checked={this.state.checked}
-                    {...htmlProps} onChange={this.handleChange}/>{value}
+                    {...htmlProps} onChange={this.handleChange}/><span>{value}</span>
             </label>);
 
         return (

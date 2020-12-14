@@ -822,3 +822,69 @@ html.theme-light,
     background-color: rgb(245, 244, 240);
     border-color: #ddd #ddd rgb(245, 244, 240);
 }
+
+.spx-checkbox {
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    padding-left: 2em;
+    position: relative;
+    vertical-align: middle;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: -5px;
+}
+
+    .spx-checkbox:before {
+        content: "\F242A";
+        display: block;
+        position: absolute;
+        text-align: center;
+        left: 0;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        margin-top: 1px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        background-color: transparent;
+        font-family: Sectra-PX;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1.14286rem;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        transition: color 0.3s;
+    }
+
+.spx-checkbox.active:before {
+    content: "\F2432";
+}
+
+
+.spx-checkbox.active:before {
+    content: "\F2432";
+}
+
+
+.spx-checkbox.focus:before, .spx-checkbox:hover:before {
+    background-color:  rgba(150, 189, 241, .2);
+}
+.spx-checkbox.focus:before, .spx-checkbox:hover:before {
+    border-color: rgba(169, 202, 246, .3);
+}
+
+.spx-checkbox > span {
+    display: block;
+    margin-top: .1em;
+    vertical-align: middle;
+}
+
+.spx-checkbox > input[type='checkbox'] {
+    position: absolute;
+    left: -2000px;
+    opacity: 0;
+}

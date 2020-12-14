@@ -76,6 +76,9 @@ export class Test extends React.Component<{}, TestState> {
                 <SectraRow abbrTitle='Testing Abbr Title' labelText="TAT">
                     <SectraInput name={'Input'} type={'text'} />
                 </SectraRow>
+                <SectraRow labelText="Other type of checkbutton">
+                    <SectraCheckButton name="checkbtnTest" value="Other type of checkbutton" buttonStyle={false}></SectraCheckButton>
+                </SectraRow>
                 <SectraCanvas id="test-canvas" paintType="Spray" />
             </div>
         );
