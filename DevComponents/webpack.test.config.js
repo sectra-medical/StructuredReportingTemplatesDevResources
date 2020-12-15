@@ -25,14 +25,14 @@ module.exports = {
 
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
 
-            { test: /\.(svg|woff2?|ttf|eot)/, loader: "url-loader?limit=100000" }
-
+            { test: /\.(svg|woff2?|ttf|eot)/, loader: "file-loader", options: { esModule: false } },
         ]
     },
     plugins: [
         new CopyWebpackPlugin([
             { from: './*.html' },
-            {from:'./*.css'}
+            { from:'./*.css'},
+            { from: './Sectra-PX.*' },
         ])
     ],
     performance: {

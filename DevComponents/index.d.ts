@@ -103,6 +103,7 @@ export interface SectraCheckButtonProps extends React.HTMLProps<HTMLInputElement
     onStateChange?: (x: boolean) => void;
     partOfGroup?: boolean;
     preventOutput?: boolean;
+    buttonStyle?: boolean;
 }
 
 

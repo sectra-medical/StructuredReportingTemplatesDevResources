@@ -26,11 +26,14 @@ module.exports = config = {
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
 
+            { test: /\.(svg|woff2?|ttf|eot)/, loader: "file-loader", options: { esModule: false } },
         ]
     },
     plugins: [
         new CopyWebpackPlugin([
-            { from: './src/*.css', to: '[name].css' }
+            { from: './*.html' },
+            { from:'./*.css'},
+            { from: './Sectra-PX.*' },
         ])
     ],
     performance: {
