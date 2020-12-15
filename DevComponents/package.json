@@ -1,6 +1,6 @@
 {
   "name": "@sectramedical/srt-components",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Development components for creating structured report templates to Sectra IDS7.",
   "main": "./dist/bundle.js",
   "types": "index.d.ts",
