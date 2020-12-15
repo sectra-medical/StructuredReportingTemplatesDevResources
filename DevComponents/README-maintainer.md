@@ -21,6 +21,7 @@ To create a new component you will need the following things
 
 ## Publish
 You need an user at npm with rights to contribute to the package.
+I.e. npm adduser
 
 After publishing, please update the @sectra/srt-components version in [cra-template-srt](https://gitlab.sectra.net/LocalDevSe/cra-template-srt) package.json file.
 (If you added a new component, its nice if you also add a demo of it in the cra-template-srt)
