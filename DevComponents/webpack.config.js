@@ -31,9 +31,8 @@ module.exports = config = {
     },
     plugins: [
         new CopyWebpackPlugin([
-            { from: './*.html' },
-            { from:'./*.css'},
-            { from: './Sectra-PX.*' },
+            { from:'./src/*.css', to: "[name].css"},
+            { from: './src/Sectra-PX.*', to: "[name].[ext]" },
         ])
     ],
     performance: {
